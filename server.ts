@@ -13,7 +13,7 @@ const server = new Drash.Http.Server({
 
 server.run({
   hostname: "localhost",
-  port: 80,
+  port: 8000,
 });
 
 console.log("Server listennig on port " + server.port);
