@@ -13,8 +13,8 @@ const server = new Drash.Http.Server({
 
 server.run({
   hostname: "localhost",
-  port: 8080,
+  port: 22,
 });
 
-console.log("Server listennig on port 8080");
+console.log("Server listennig on port " + server.port);
 console.log("with ping");
