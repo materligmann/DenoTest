@@ -17,3 +17,4 @@ server.run({
 });
 
 console.log("Server listennig on port 8080");
+console.log("with ping");
