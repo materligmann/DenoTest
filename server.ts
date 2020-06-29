@@ -12,7 +12,7 @@ const server = new Drash.Http.Server({
 });
 
 server.run({
-  hostname: "127.0.0.1",
+  hostname: "localhost",
   port: 3000,
 });
 
