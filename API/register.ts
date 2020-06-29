@@ -7,9 +7,11 @@ export class Register extends Drash.Http.Resource {
   public POST() {
     const email = this.request.getBodyParam("email");
     const password = this.request.getBodyParam("password");
-    console.log("Email Received " + email);
-    console.log("Password Received " + password);
-    this.response.body = backend.register(email, password);
+    let emailStr = email as string;
+    let paswordstr = password as string;
+    console.log("Email Received " + emailStr);
+    console.log("Password Received " + paswordstr);
+    this.response.body = backend.register(emailStr, paswordstr);
     return this.response;
   }
 }
