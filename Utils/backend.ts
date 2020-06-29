@@ -7,10 +7,13 @@ export class BackEnd {
 
   // MARK: Auth
 
-  register(email: string, password: string): User {
-    let user = new User(email, password, this.getNewUUID());
-    this.users.push(user);
-    return user;
+  register(email?: string, password?: string): (User | ErrorMGD) {
+    if (email && password) {
+      let user = new User(email, password, this.getNewUUID());
+      this.users.push(user);
+      return user;
+    }
+    return new ErrorMGD(8, "no user was added");
   }
 
   signIn(email: string, password: string): (User | ErrorMGD) {
