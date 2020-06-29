@@ -11,7 +11,9 @@ export class Login extends Drash.Http.Resource {
     console.log("Email Received " + email);
     console.log("Password Received " + password);
 
-    this.response.body = backend.signIn(email, password);
+    if ((email) && (password)) {
+      this.response.body = backend.signIn(email, password);
+    }
     return this.response;
   }
 }
