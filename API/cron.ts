@@ -7,7 +7,7 @@ export class Cron extends Drash.Http.Resource {
   public GET() {
     console.log("cronning...");
     const seed = this.request.getBodyParam("seed");
-    let seedNumber = seed as number;
+    let seedNumber: number = +seed;
     let newOrder = backend.generateOrder(seedNumber);
     this.response.body = newOrder;
     return this.response;
